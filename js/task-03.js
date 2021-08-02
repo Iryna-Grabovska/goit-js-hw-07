@@ -12,8 +12,18 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const ul = document.querySelector("#gallery")
+const imagesEl = images.map(img => {
+  const addItems = document.createElement("li");
+  const imgEl = document.createElement("img");
+  imgEl.alt = img.alt;
+  imgEl.src = img.url;
+  imgEl.width = 250;
 
-const imgEll = document.createElement("img");
-console.log(imgEll);
-imgEll.url = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-imgEll.alt = 'White and Black Long Fur Cat';
+  addItems.appendChild(imgEl);
+  console.log(addItems);
+  console.log(imgEl);
+  return addItems;
+})
+ul.append(...imagesEl);
+
