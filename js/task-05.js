@@ -4,5 +4,11 @@ const refs = {
 }
 refs.input.addEventListener(`input`, onInputChange);
 function onInputChange(event) {
-  refs.textSpan.textContent = event.currentTarget.value;
+  if (event.currentTarget.value === '') {
+    refs.textSpan.textContent = 'незнакомец';
+  }
+  else {
+    refs.textSpan.textContent = event.currentTarget.value;
+  }
 }
+
