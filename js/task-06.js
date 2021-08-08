@@ -1,20 +1,20 @@
+const input = document.querySelector("#validation-input");
+const limit = Number(document.querySelector('#validation-input').dataset.length)
 
-const input = document.querySelector('[data-length]')
 
 console.log(input);
-
-input.addEventListener('blur', (event) => {
-  console.log(event);
-
+input.addEventListener('blur', () => {
 
   let value = input.value.length;
-
-  if (value != input) {
+  console.log(value);
+  if (value !== limit) {
     input.classList.add('invalid');
     input.classList.remove('valid');
     return;
   }
+
   input.classList.add('valid');
   input.classList.remove('invalid');
+
 
 })
